@@ -2,16 +2,7 @@ extends layout
 
 block content
     form(method='POST' action='/new-workout')
-        div.for-group
-            label(for='exercise') Exercise:
-            input#exercise.for-control(type='text', name='exercise')
-        div.for-group
-            label(for='description') Description:
-            input#description.for-control(type='text', name='description')
-        div.for-group
-            label(for='set') Set:
-            input#set.for-control(type='number', name='set')
-        div.for-group
-            label(for='reps') Rep/time:
-            input#reps.for-control(type='text', name='reps')
+        div.form-group
+            label(for='name') Name:
+            input#name.form-control(type='text', name='name')
         button.btn.btn-primary(type='submit') Save

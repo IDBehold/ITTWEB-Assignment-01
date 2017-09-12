@@ -1,17 +1,15 @@
 const mongodb = require('../models/mongodb')
+const sleep = require('system-sleep');
 module.exports.newWorkout = function (req, res) {
     res.render('new-workout', {title: 'Create new workout'})
 };
 
 module.exports.create = function (req, res) {
     var workout = {
-        exercise: req.body.exercise,
-        description: req.body.description,
-        set: req.body.set,
-        reps: req.body.reps
+        name: req.body.name
     };
 
-    console.log('Data: ' + workout.exercise + ' ' + workout.description + ' ' + workout.set + ' ' + workout.reps)
     mongodb.insert(workout);
+    sleep(1);
     res.redirect('/');
 };
